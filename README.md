@@ -51,7 +51,8 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
       sudo apt-get install tightvncserver
       vncserver  :1 -geometry 1920x1080 -depth 24
      ```
+     - **When setting up tightvnc, choose a password that is distinct from your RPi login.**
   2. Install and launch Real VNC's Chrome Add-on [link here](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla) on your personal computer
   3. Connect to your RPi by entering IPv4 address (from Step 9) followed by `:` and the port number for tightvnc (usually `1`).
     - For example, if IPv4 address is `172.18.24.24` and the vnc is on port `1`, then you should use `172.18.24.24:1`
-    - Login with your username (default `pi` unless you changed it) and your password (from Step 7)
+    - Login with your vnc password (see step 11.i above)
