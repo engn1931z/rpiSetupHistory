@@ -38,8 +38,20 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 9. Register your RPi with Brown to bypass WiFi terms acceptance in the future
   1. Find your MAC (`HWaddr`) address of your WiFi adapter (`wlan0`) by using `ifconfig` command
-  2. Note and record your `IPv4 address` for the future use.
+  2. Note and record your `IPv4 address` for the future use. (This should probably resemble  172.18.xx.xx)
   2. Register your device at http://guestwifi.net.brown.edu/ **using another computer**. (The web browser on RPi is not secure, so please do not use it to enter your Brown credentials.)
 
 10. Setup SSH on your personal computer [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/)
- - **Now you should be able to SSH into your RPi** using the IPv4 address you recorded earlier together with the username `pi` and your password.
+ - **Now you should be able to SSH into your RPi** using the IPv4 address you recorded earlier (Step 9) together with the username `pi` and your password (Step 7).
+
+11. Setup basic (**unencrypted**) VNC - Virtual Network Connection [following subset of instructions here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
+   1. Install and launch tightvnc on RPi from terminal: 
+   
+      ```
+      sudo apt-get install tightvncserver
+      vncserver  :1 -geometry 1920x1080 -depth 24
+     ```
+  2. Install and launch Real VNC's Chrome Add-on [link here](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla) on your personal computer
+  3. Connect to your RPi by entering IPv4 address (from Step 9) followed by `:` and the port number for tightvnc (usually `1`).
+    - For example, if IPv4 address is `172.18.24.24` and the vnc is on port `1`, then you should use `172.18.24.24:1`
+    - Login with your username (default `pi` unless you changed it) and your password (from Step 7)
