@@ -3,7 +3,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 ## Setting up the basics
 
-** This setup log will begin with quite explicit instructions, but as we proceed, I assume that you will be able to help fill in the blanks.
+** This setup log will begin with quite explicit instructions, but as we proceed, I assume that you will be able to help fill in the blanks.**
 
 1. Begin with micro SD card loaded with latest NOOBS - New Out of the Box Software 
  - The microSDs provided with the class kit have been loaded with NOOBS v2.4.5.
@@ -57,10 +57,10 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
    a. Install and launch tightvnc on RPi from terminal: 
    
-      ```
-      sudo apt-get install tightvncserver
-      vncserver  :1 -geometry 1920x1080 -depth 24
-     ```
+```
+sudo apt-get install tightvncserver
+vncserver  :1 -geometry 1920x1080 -depth 24
+```
      - **When setting up tightvnc, choose a password that is distinct from your RPi login.**
   b. Install and launch Real VNC's Chrome App [link here](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla) on your personal computer.
   c. Connect to your RPi by entering IP address (from Step 9) followed by `:` and the port number for tightvnc (usually `1`).
@@ -84,7 +84,7 @@ Type=Application
 Name=TightVNC
 Exec=vncserver :1 -geometry 1920x1080 -depth 24
 StartupNotify=False
-``
+```
 
 After putting file contents, exit and save file by doing: Ctrl+X, y.
 
