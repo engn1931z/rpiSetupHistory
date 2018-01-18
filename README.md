@@ -1,19 +1,6 @@
 # rpiSetupHistory
 Record of Raspberry PI Setup Procedure for ENGN1931Z
 
-```
-   .~~.   .~~.
-  '. \ ' ' / .'
-   .~ .~~~..~.
-  : .~.'~'.~. :
- ~ (   ) (   ) ~
-( : '~'.~.'~' : )
- ~ .~ (   ) ~. ~
-  (  : '~' :  ) Raspberry Pi
-   '~ .~~~. ~'
-       '~'
-```
-
 ## Setting up the basics
 
 **This setup log will begin with quite explicit instructions, but as we proceed, I assume that you will be able to help fill in the blanks.**
@@ -41,6 +28,18 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
   + Read and accept the Brown-Guest WiFi login terms. Test your connection.
  
+```
+   .~~.   .~~.
+  '. \ ' ' / .'
+   .~ .~~~..~.
+  : .~.'~'.~. :
+ ~ (   ) (   ) ~
+( : '~'.~.'~' : )
+ ~ .~ (   ) ~. ~
+  (  : '~' :  ) Raspberry Pi
+   '~ .~~~. ~'
+       '~'
+```
 
 6. Launch a terminal (black icon in top left) and upgrade to the latest Raspbian distribution using following commands:
 
@@ -68,6 +67,19 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 10. Enable SSH on the Raspberry Pi, and set up your personal computer (client) to use it  [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/).
 
  - **Now you should be able to SSH into your RPi** using the IP address you recorded earlier (Step 9) together with the username `pi` and your password (Step 7).
+
+```
+   .~~.   .~~.
+  '. \ ' ' / .'
+   .~ .~~~..~.
+  : .~.'~'.~. :
+ ~ (   ) (   ) ~
+( : '~'.~.'~' : )
+ ~ .~ (   ) ~. ~
+  (  : '~' :  ) Raspberry Pi
+   '~ .~~~. ~'
+       '~'
+```
 
 11. Setup basic (**unencrypted**) VNC - Virtual Network Connection [following subset of instructions here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
 
