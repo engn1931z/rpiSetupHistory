@@ -64,11 +64,12 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 sudo apt-get install tightvncserver
 vncserver  :1 -geometry 1920x1080 -depth 24
 ```
-     - **When setting up tightvnc, choose a password that is distinct from your RPi login.**
+**When setting up tightvnc, choose a password that is distinct from your RPi login.**
+
   + Install and launch Real VNC's Chrome App [link here](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla) on your personal computer.
   + Connect to your RPi by entering IP address (from Step 9) followed by `:` and the port number for tightvnc (usually `1`).
     - For example, if IP address is `172.18.24.24` and the vnc is on port `1`, then you should use `172.18.24.24:1`
-    - Login with your vnc password (see step 11.i above).
+    - Login with your vnc password (see step 11 above).
     
 12. To have the above run every time the RPi boots open up a terminal and do the following:
 
@@ -79,7 +80,7 @@ cd autostart
 nano tightvnc.desktop
 ```
 
-The last line creates the file tightvnc.desktop for editing. Nano is a commandline utility for text editing. Fill it up like so:
+The last line creates the file `tightvnc.desktop`. Nano is a commandline utility for text editing. Fill it up like so:
 
 ```
 [Desktop Entry]
@@ -89,20 +90,27 @@ Exec=vncserver :1 -geometry 1920x1080 -depth 24
 StartupNotify=False
 ```
 
-After putting file contents, exit and save file by doing: Ctrl+X, y.
+After putting file contents, exit and save file by doing: `Ctrl+x`, `y`.
 
 ## Setting up Python3 and Jupyter Notebooks
 
+```
 sudo apt-get install python3-matplotlib
 sudo apt-get install python3-scipy
 pip3 install --upgrade pip
 sudo pip3 install jupyter
+```
 
 Run notebook interface using:
 
+```
 jupyter notebook
+```
 
 ## Installing pyQT4 for Python3
+
+pyQT allows us to create simple GUIs using Python. Set it up like so:
+
 
 ```
 sudo apt-get install qt4-default pyqt4-dev-tools
@@ -110,6 +118,8 @@ sudo apt-get install python3-pyqt4
 ```
 
 ## Using Selenium in Raspberry Pi with Firefox
+
+Selenium allows us to programmatically control a browser. Set it up like so:
 
 1. Follow instructions in [https://mozilla.debian.net](https://mozilla.debian.net) to install Firefox in Raspian. Choose options so that the options chosen read: I'm running Debian **(oldstable (Jessie))** and I want to install **Firefox** version **esr52**.
 
@@ -119,7 +129,7 @@ sudo apt-get install python3-pyqt4
 ```
 tar -xzf geckodriver-0.18.0-arm7hf.tar.gz
 ```
-+ Move the extracted file geckodriver to /usr/local/bin/ using admin privileges:
++ Move the extracted file geckodriver to `/usr/local/bin/` using admin privileges:
 
 ```
 sudo mv geckodriver /usr/local/bin/
