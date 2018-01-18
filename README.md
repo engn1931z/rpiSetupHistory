@@ -101,8 +101,10 @@ jupyter notebook
 
 ## Installing pyQT4 for Python3
 
+```
 sudo apt-get install qt4-default pyqt4-dev-tools
 sudo apt-get install python3-pyqt4
+```
 
 ## Using Selenium in Raspberry Pi with Firefox
 
@@ -110,14 +112,18 @@ sudo apt-get install python3-pyqt4
 
 + Download [geckodriver-0.18.0-arm7hf.tar.gz](https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-arm7hf.tar.gz).
 + Decompress it:
+
 ```
 tar -xzf geckodriver-0.18.0-arm7hf.tar.gz
 ```
 + Move the extracted file geckodriver to /usr/local/bin/ using admin privileges:
+
 ```
 sudo mv geckodriver /usr/local/bin/
 ```
 
 + Use pip3 to install selenium:
 
+```
 sudo pip3 install selenium
+```
