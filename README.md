@@ -3,27 +3,30 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 ## Setting up the basics
 
-** This setup log will begin with quite explicit instructions, but as we proceed, I assume that you will be able to help fill in the blanks.**
+**This setup log will begin with quite explicit instructions, but as we proceed, I assume that you will be able to help fill in the blanks.**
 
 1. Begin with micro SD card loaded with latest NOOBS - New Out of the Box Software 
- - The microSDs provided with the class kit have been loaded with NOOBS v2.4.5.
- - Alternatively, you can follow the [instructions here](https://www.raspberrypi.org/documentation/installation/noobs.md) to download and load NOOBS on your own microSD.
+
+ + The microSDs provided with the class kit have been loaded with NOOBS v2.4.5.
+ + Alternatively, you can follow the [instructions here](https://www.raspberrypi.org/documentation/installation/noobs.md) to download and load NOOBS on your own microSD.
  
 2. Insert microSD into RPi, connect display+keyboard+mouse, and then power on.
- - Note that the RPi autodetects the display resolution on startup, so make sure to connect display first. (Otherwise, you will get very low resolution by default)
+
+ + Note that the RPi autodetects the display resolution on startup, so make sure to connect display first. (Otherwise, you will get very low resolution by default)
 
 3. Select and Install Raspbian from NOOBS menu
- - This step will take a while (~10-15 minutes), and after the installation is complete it will reboot to a graphic interface.
+
+ + This step will take a while (~10-15 minutes), and after the installation is complete it will reboot to a graphic interface.
 
 4. Setup keyboard, location, etc. using top `Menu` > `Preferences` > `Raspberry Pi Configuration`
 
 5. Connect to the internet  via ethernet cable or Brown-Guest WiFi (instructions below).
 
-  a. Select Brown-Guest using network icon in upper right.
+  + Select Brown-Guest using network icon in upper right.
 
-  b. Launch Chromium web browser using the world icon in the upper left.
+  + Launch Chromium web browser using the world icon in the upper left.
 
-  c. Read and accept the Brown-Guest WiFi login terms. Test your connection.
+  + Read and accept the Brown-Guest WiFi login terms. Test your connection.
  
 
 6. Launch a terminal (black icon in top left) and upgrade to the latest Raspbian distribution using following commands:
@@ -43,11 +46,11 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 9. Register your RPi with Brown to bypass WiFi terms acceptance in the future, and use IP address for VNC login:
 
-  a. Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether`(e.g. b8:27:eb:51:22:21).
+  + Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether`(e.g. b8:27:eb:51:22:21).
 
-  b. Note and record your IP address for future use. It is also found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx).
+  + Note and record your IP address for future use. It is also found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx).
 
-  c. Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input.
+  + Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input.
 
 10. Enable SSH on the Raspberry Pi, and set up your personal computer (client) to use it  [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/).
 
@@ -55,15 +58,15 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 11. Setup basic (**unencrypted**) VNC - Virtual Network Connection [following subset of instructions here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
 
-   a. Install and launch tightvnc on RPi from terminal: 
+   + Install and launch tightvnc on RPi from terminal: 
    
 ```
 sudo apt-get install tightvncserver
 vncserver  :1 -geometry 1920x1080 -depth 24
 ```
      - **When setting up tightvnc, choose a password that is distinct from your RPi login.**
-  b. Install and launch Real VNC's Chrome App [link here](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla) on your personal computer.
-  c. Connect to your RPi by entering IP address (from Step 9) followed by `:` and the port number for tightvnc (usually `1`).
+  + Install and launch Real VNC's Chrome App [link here](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla) on your personal computer.
+  + Connect to your RPi by entering IP address (from Step 9) followed by `:` and the port number for tightvnc (usually `1`).
     - For example, if IP address is `172.18.24.24` and the vnc is on port `1`, then you should use `172.18.24.24:1`
     - Login with your vnc password (see step 11.i above).
     
