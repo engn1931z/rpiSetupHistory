@@ -129,7 +129,7 @@ Selenium allows us to programmatically control a browser. Set it up like so:
 ```
 tar -xzf geckodriver-0.18.0-arm7hf.tar.gz
 ```
-+ Move the extracted file geckodriver to `/usr/local/bin/` using admin privileges:
++ Move the extracted file `geckodriver` to `/usr/local/bin/` using admin privileges:
 
 ```
 sudo mv geckodriver /usr/local/bin/
