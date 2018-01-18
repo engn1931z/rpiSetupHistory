@@ -18,9 +18,10 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 4. Setup keyboard, location, etc. using top `Menu` > `Preferences` > `Raspberry Pi Configuration`
 
 5. Connect to the internet  via ethernet cable or Brown-Guest WiFi (instructions below).
-  1. Select Brown-Guest using network icon in upper right.
-  2. Launch Chromium web browser using the world icon in the upper left.
-  3. Read and accept the Brown-Guest WiFi login terms. Test your connection.
+
+  a. Select Brown-Guest using network icon in upper right.
+  b. Launch Chromium web browser using the world icon in the upper left.
+  c. Read and accept the Brown-Guest WiFi login terms. Test your connection.
  
 
 6. Launch a terminal (black icon in top left) and upgrade to the latest Raspbian distribution using following commands:
@@ -38,12 +39,14 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
    sudo rm /etc/ssh/ssh_host_* && sudo dpkg-reconfigure openssh-server
    ```
 
-9. Register your RPi with Brown to bypass WiFi terms acceptance in the future
-  1. Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether`(e.g. b8:27:eb:51:22:21).
-  2. Note and record your IP address for future use. It is also found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx).
-  2. Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input.
+9. Register your RPi with Brown to bypass WiFi terms acceptance in the future, and use IP address for VNC login:
+
+  a. Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether`(e.g. b8:27:eb:51:22:21).
+  b. Note and record your IP address for future use. It is also found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx).
+  c. Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input.
 
 10. Enable SSH on the Raspberry Pi, and set up your personal computer (client) to use it  [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/).
+
  - **Now you should be able to SSH into your RPi** using the IP address you recorded earlier (Step 9) together with the username `pi` and your password (Step 7).
 
 11. Setup basic (**unencrypted**) VNC - Virtual Network Connection [following subset of instructions here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
@@ -113,4 +116,3 @@ sudo mv geckodriver /usr/local/bin/
 + Use pip3 to install selenium:
 
 sudo pip3 install selenium
-
