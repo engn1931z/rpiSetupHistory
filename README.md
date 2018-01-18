@@ -20,7 +20,9 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 5. Connect to the internet  via ethernet cable or Brown-Guest WiFi (instructions below).
 
   a. Select Brown-Guest using network icon in upper right.
+
   b. Launch Chromium web browser using the world icon in the upper left.
+
   c. Read and accept the Brown-Guest WiFi login terms. Test your connection.
  
 
@@ -42,7 +44,9 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 9. Register your RPi with Brown to bypass WiFi terms acceptance in the future, and use IP address for VNC login:
 
   a. Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether`(e.g. b8:27:eb:51:22:21).
+
   b. Note and record your IP address for future use. It is also found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx).
+
   c. Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input.
 
 10. Enable SSH on the Raspberry Pi, and set up your personal computer (client) to use it  [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/).
@@ -64,6 +68,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
     - Login with your vnc password (see step 11.i above).
     
 12. To have the above run every time the RPi boots open up a terminal and do the following:
+
 
 ```
 cd .config
