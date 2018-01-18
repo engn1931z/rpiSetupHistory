@@ -1,6 +1,19 @@
 # rpiSetupHistory
 Record of Raspberry PI Setup Procedure for ENGN1931Z
 
+```
+   .~~.   .~~.
+  '. \ ' ' / .'
+   .~ .~~~..~.
+  : .~.'~'.~. :
+ ~ (   ) (   ) ~
+( : '~'.~.'~' : )
+ ~ .~ (   ) ~. ~
+  (  : '~' :  ) Raspberry Pi
+   '~ .~~~. ~'
+       '~'
+```
+
 ## Setting up the basics
 
 **This setup log will begin with quite explicit instructions, but as we proceed, I assume that you will be able to help fill in the blanks.**
@@ -18,7 +31,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
  + This step will take a while (~10-15 minutes), and after the installation is complete it will reboot to a graphic interface.
 
-4. Setup keyboard, location, etc. using top `Menu` > `Preferences` > `Raspberry Pi Configuration`
+4. Setup keyboard layout (special characters might not be correctly matched), location, and others by using going to `Menu` > `Preferences` > `Raspberry Pi Configuration` : `Localization`
 
 5. Connect to the internet  via ethernet cable or Brown-Guest WiFi (instructions below).
 
