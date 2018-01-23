@@ -28,7 +28,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
  + Note that the RPi autodetects the display resolution on startup, so make sure to connect display first. (Otherwise, you will get very low resolution by default)
 
-3. Select and Install Raspbian from NOOBS menu
+3. Select and Install Raspbian from NOOBS menu:
 
  + This step will take a while (~15-20 minutes), and after the installation is complete it will reboot to a graphic interface.
 
@@ -36,7 +36,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 4. Setup keyboard layout (special characters might not be correctly matched), location, and others by using going to `Menu` > `Preferences` > `Raspberry Pi Configuration` : `Localization`
 
-5. Finding MAC address of the Raspberry Pi and registering it to connect seamlessly to the Brown-Guest WiFi network.
+5. Finding MAC address of the Raspberry Pi and registering it to connect seamlessly to the Brown-Guest WiFi network:
 
   + Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether` (e.g. b8:27:eb:51:22:21).
 
@@ -67,9 +67,9 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
    sudo rm /etc/ssh/ssh_host_* && sudo dpkg-reconfigure openssh-server
    ```
 
-10. Enable SSH on the Raspberry Pi, and set up your personal computer (client) to use it  [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/).
+10. Enable SSH on the Raspberry Pi, and set up your personal computer (client) to use it  [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/):
 
- - **Now you should be able to SSH into your RPi** using the IP address you recorded earlier (Step 9) together with the username `pi` and your password (Step 7).
+ - **Now you should be able to SSH into your RPi** using the IP address you recorded earlier (Step 7) together with the username `pi` and your password (Step 7).
 
 11. Setup basic (**unencrypted**) VNC - Virtual Network Connection [following subset of instructions here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
 
