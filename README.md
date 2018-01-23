@@ -50,7 +50,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
   + Test your connection.
   
-  + In a terminal run the `ifconfig` command again, this time note and record your IP address for future use. It is found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx).
+  + In a terminal run the `ifconfig` command again, this time note and record your IP address for future use. It is found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx). In the future it might occurr that your Raspberry Pi connects correctly to Brown-Guest but that its IP address is changed, one way of seeing this new IP address, withouth having to log in to the Pi or hooking up a monitor and keyboard, is going to the website used to register the MAC address http://guestwifi.net.brown.edu/ : Manage Devices : Click on your Pi info : Click on Print Icon. IP address should show here.
 
 7. Launch a terminal (black icon in top left) and upgrade to the latest Raspbian distribution using following commands:
 
