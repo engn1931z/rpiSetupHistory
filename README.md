@@ -1,6 +1,20 @@
 # rpiSetupHistory
 Record of Raspberry PI Setup Procedure for ENGN1931Z
 
+ 
+```
+   .~~.   .~~.
+  '. \ ' ' / .'
+   .~ .~~~..~.
+  : .~.'~'.~. :
+ ~ (   ) (   ) ~
+( : '~'.~.'~' : )
+ ~ .~ (   ) ~. ~
+  (  : '~' :  ) Raspberry Pi
+   '~ .~~~. ~'
+       '~'
+```
+
 ## Setting up the basics
 
 **This setup log will begin with quite explicit instructions, but as we proceed, I assume that you will be able to help fill in the blanks.**
@@ -16,70 +30,46 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 3. Select and Install Raspbian from NOOBS menu
 
- + This step will take a while (~10-15 minutes), and after the installation is complete it will reboot to a graphic interface.
+ + This step will take a while (~15-20 minutes), and after the installation is complete it will reboot to a graphic interface.
+
+(DO NOT connect to Wi-Fi, yet)
 
 4. Setup keyboard layout (special characters might not be correctly matched), location, and others by using going to `Menu` > `Preferences` > `Raspberry Pi Configuration` : `Localization`
 
-5. Connect to the internet  via ethernet cable or Brown-Guest WiFi (instructions below).
+5. Finding MAC address of the Raspberry Pi and registering it to connect seamlessly to the Brown-Guest WiFi network.
 
-  + Select Brown-Guest using network icon in upper right.
+  + Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether` (e.g. b8:27:eb:51:22:21).
+
+  + USING ANOTHER COMPUTER. Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input.
+
+6. Back to the Raspberry Pi. Connect to the internet using WiFi:
+
+  + Select Brown-Guest using the network icon in upper right.
 
   + Launch Chromium web browser using the world icon in the upper left.
 
-  + Read and accept the Brown-Guest WiFi login terms. Test your connection.
- 
-```
-   .~~.   .~~.
-  '. \ ' ' / .'
-   .~ .~~~..~.
-  : .~.'~'.~. :
- ~ (   ) (   ) ~
-( : '~'.~.'~' : )
- ~ .~ (   ) ~. ~
-  (  : '~' :  ) Raspberry Pi
-   '~ .~~~. ~'
-       '~'
-```
+  + Test your connection.
+  
+  + In a terminal run the `ifconfig` command again, this time note and record your IP address for future use. It is found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx).
 
-6. Launch a terminal (black icon in top left) and upgrade to the latest Raspbian distribution using following commands:
+7. Launch a terminal (black icon in top left) and upgrade to the latest Raspbian distribution using following commands:
 
    ```
    sudo apt-get update
    sudo apt-get dist-upgrade
    ```
 
-7. Change Login Password using the terminal command `passwd`. Note that the default username is `pi` and the default password is `raspberry` for all RPis.
+8. Change Login Password using the terminal command `passwd`. Note that the default username is `pi` and the default password is `raspberry` for all RPis.
 
-8. Generate new Secure Shell (SSH) keys using the following terminal command:
+9. Generate new Secure Shell (SSH) keys using the following terminal command:
 
    ```
    sudo rm /etc/ssh/ssh_host_* && sudo dpkg-reconfigure openssh-server
    ```
 
-9. Register your RPi with Brown to bypass WiFi terms acceptance in the future, and use IP address for VNC login:
-
-  + Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether`(e.g. b8:27:eb:51:22:21).
-
-  + Note and record your IP address for future use. It is also found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx).
-
-  + Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input.
-
 10. Enable SSH on the Raspberry Pi, and set up your personal computer (client) to use it  [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/).
 
  - **Now you should be able to SSH into your RPi** using the IP address you recorded earlier (Step 9) together with the username `pi` and your password (Step 7).
-
-```
-   .~~.   .~~.
-  '. \ ' ' / .'
-   .~ .~~~..~.
-  : .~.'~'.~. :
- ~ (   ) (   ) ~
-( : '~'.~.'~' : )
- ~ .~ (   ) ~. ~
-  (  : '~' :  ) Raspberry Pi
-   '~ .~~~. ~'
-       '~'
-```
 
 11. Setup basic (**unencrypted**) VNC - Virtual Network Connection [following subset of instructions here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
 
@@ -98,7 +88,6 @@ vncserver  :1 -geometry 1920x1080 -depth 24
     
 12. To have the above run every time the RPi boots open up a terminal and do the following:
 
-
 ```
 cd .config
 cd autostart
@@ -116,52 +105,3 @@ StartupNotify=False
 ```
 
 After putting file contents, exit and save file by doing: `Ctrl+x`, `y`.
-
-## Setting up Python3 and Jupyter Notebooks
-
-```
-sudo apt-get install python3-matplotlib
-sudo apt-get install python3-scipy
-pip3 install --upgrade pip
-sudo pip3 install jupyter
-```
-
-Run notebook interface using:
-
-```
-jupyter notebook
-```
-
-## Installing pyQT4 for Python3
-
-pyQT allows us to create simple GUIs using Python. Set it up like so:
-
-
-```
-sudo apt-get install qt4-default pyqt4-dev-tools
-sudo apt-get install python3-pyqt4
-```
-
-## Using Selenium in Raspberry Pi with Firefox
-
-Selenium allows us to programmatically control a browser. Set it up like so:
-
-1. Follow instructions in [https://mozilla.debian.net](https://mozilla.debian.net) to install Firefox in Raspian. Choose options so that the options chosen read: I'm running Debian **(oldstable (Jessie))** and I want to install **Firefox** version **esr52**.
-
-+ Download [geckodriver-0.18.0-arm7hf.tar.gz](https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-arm7hf.tar.gz).
-+ Decompress it:
-
-```
-tar -xzf geckodriver-0.18.0-arm7hf.tar.gz
-```
-+ Move the extracted file `geckodriver` to `/usr/local/bin/` using admin privileges:
-
-```
-sudo mv geckodriver /usr/local/bin/
-```
-
-+ Use pip3 to install selenium:
-
-```
-sudo pip3 install selenium
-```
