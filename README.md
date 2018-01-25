@@ -38,9 +38,9 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 5. Finding MAC address of the Raspberry Pi and registering it to connect seamlessly to the Brown-Guest WiFi network:
 
-  + Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. Under the block under `wlan0` look for the set of characters after `ether` (e.g. b8:27:eb:51:22:21).
+  + Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. In the block under `wlan0` look for the set of characters after `ether` (e.g. b8:27:eb:51:22:21).
 
-  + USING ANOTHER COMPUTER. Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input.
+  + USING ANOTHER COMPUTER. Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input after the first successful connection.
 
 6. Back to the Raspberry Pi. Connect to the internet using WiFi:
 
@@ -50,7 +50,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
   + Test your connection.
   
-  + In a terminal run the `ifconfig` command again, this time note and record your IP address for future use. It is found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx). In the future it might occurr that your Raspberry Pi connects correctly to Brown-Guest but that its IP address is changed, one way of seeing this new IP address, withouth having to log in to the Pi or hooking up a monitor and keyboard, is going to the website used to register the MAC address http://guestwifi.net.brown.edu/ : Manage Devices : Click on your Pi info : Click on Print Icon. IP address should show here.
+  + In a terminal run the `ifconfig` command again, this time note and record your IP address for future use. It is found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx). In the future it might occurr that your Raspberry Pi connects correctly to Brown-Guest but that its IP address is changed, one of several way getting this new IP address, withouth having to log in to the Pi or hooking up a monitor and keyboard, is going to the website used to register the MAC address http://guestwifi.net.brown.edu/ : Manage Devices : Click on your Pi info : Click on Print Icon. IP address should show here.
 
 7. Launch a terminal (black icon in top left) and upgrade to the latest Raspbian distribution using following commands:
 
