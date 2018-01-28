@@ -17,12 +17,12 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 ## Setting up the basics
 
-**This setup log will begin with quite explicit instructions, but as we proceed, I assume that you will be able to help fill in the blanks.**
+**This setup log will begin with quite explicit instructions, but as we proceed, we know that you will be able to help fill in the blanks.**
 
 1. Begin with micro SD card loaded with latest NOOBS - New Out of the Box Software 
 
- + The microSDs provided with the class kit have been loaded with NOOBS v2.4.5.
- + Alternatively, you can follow the [instructions here](https://www.raspberrypi.org/documentation/installation/noobs.md) to download and load NOOBS on your own microSD.
+ + The microSDs provided with the class kit have been loaded with NOOBS v2.4.5. The microSDs were given to you inside SD adapters that may come in handy if your computer has a standard SD slot.
+ + If you didn't get the class kit, you can follow the [instructions here](https://www.raspberrypi.org/documentation/installation/noobs.md) to download and load NOOBS on your own microSD.
  
 2. Insert microSD into RPi, connect display+keyboard+mouse, and then power on.
 
@@ -30,15 +30,15 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 3. Select and Install Raspbian from NOOBS menu:
 
- + This step will take a while (~15-20 minutes), and after the installation is complete it will reboot to a graphic interface.
+ + This step will take a while (~10-20 minutes depending on your microSD card speed), and after the installation is complete it will reboot to a graphic interface.
 
-(DO NOT connect to Wi-Fi, yet)
+**(DO NOT connect to Wi-Fi, yet)**
 
-4. Setup keyboard layout (special characters might not be correctly matched), location, and others by using going to `Menu` > `Preferences` > `Raspberry Pi Configuration` : `Localization`
+4. Setup keyboard layout (special characters might not be correctly matched), location, and others by using going to the Raspberry icon in the upper left: `Menu` > `Preferences` > `Raspberry Pi Configuration` : `Localization`
 
 5. Finding MAC address of the Raspberry Pi and registering it to connect seamlessly to the Brown-Guest WiFi network:
 
-  + Find your MAC (`HWaddr`) address of your WiFi adapter by using `ifconfig` command. In the block under `wlan0` look for the set of characters after `ether` (e.g. b8:27:eb:51:22:21).
+  + Find your MAC (`HWaddr`) address of your WiFi adapter using the `ifconfig` command. Launch the terminal (using the command prompt icon in the upper left), type `ifconfig` and press Enter. In the block under `wlan0` look for the set of characters after `ether` (e.g. b8:27:eb:51:22:21).
 
   + USING ANOTHER COMPUTER. Register your device at http://guestwifi.net.brown.edu/. This helps the Raspberry Pi connect automatically to Wi-Fi without user input after the first successful connection.
 
@@ -48,9 +48,11 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
   + Launch Chromium web browser using the world icon in the upper left.
 
-  + Test your connection.
+  + Test your connection. **(Note that you should NOT accept Brown Guest Wifi Terms; if you see a terms window, please cancel,and repeat step 5.)**
   
   + In a terminal run the `ifconfig` command again, this time note and record your IP address for future use. It is found in the `wlan0` section of the `ifconfig` output, right after `inet` (e.g. 172.18.xx.xx). In the future it might occurr that your Raspberry Pi connects correctly to Brown-Guest but that its IP address is changed, one of several way getting this new IP address, withouth having to log in to the Pi or hooking up a monitor and keyboard, is going to the website used to register the MAC address http://guestwifi.net.brown.edu/ : Manage Devices : Click on your Pi info : Click on Print Icon. IP address should show here.
+  
+  + Please complete the ENGN1931Z RPi Information form here: goo.gl/rn4nHT
 
 7. Launch a terminal (black icon in top left) and upgrade to the latest Raspbian distribution using following commands:
 
