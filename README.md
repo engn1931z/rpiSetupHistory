@@ -71,7 +71,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 10. Enable SSH on the Raspberry Pi, and set up your personal computer (client) to use it  [following the platform dependent instructions found here](https://www.raspberrypi.org/documentation/remote-access/ssh/):
 
- - **Now you should be able to SSH into your RPi** using the IP address you recorded earlier (Step 7) together with the username `pi` and your password (Step 7).
+ - **Now you should be able to SSH into your RPi** using the IP address you recorded earlier (Step 6) together with the username `pi` and your password (Step 8).
 
 11. Setup basic (**unencrypted**) VNC - Virtual Network Connection [following subset of instructions here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
 
