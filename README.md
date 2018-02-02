@@ -80,7 +80,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
    + Install and launch tightvnc on RPi from terminal: 
    
 ```
-sudo apt-get install realvncserver
+sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer
 vncserver  :1 -geometry 1920x1080 -depth 24
 ```
 **When setting up tightvnc, choose a password that is distinct from your RPi login.**
