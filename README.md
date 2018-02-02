@@ -15,6 +15,8 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
        '~'
 ```
 
+(**NOTE**: the comptuer lab at B&H 191 has all the hardware you need to setup the RPi (keyboard, mouse, monitor). All computers on the East side have them. Connect, and press the button on the back of the monitor.)
+
 ## Setting up the basics
 
 **This setup log will begin with quite explicit instructions, but as we proceed, we know that you will be able to help fill in the blanks.**
@@ -78,7 +80,7 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
    + Install and launch tightvnc on RPi from terminal: 
    
 ```
-sudo apt-get install tightvncserver
+sudo apt-get install realvncserver
 vncserver  :1 -geometry 1920x1080 -depth 24
 ```
 **When setting up tightvnc, choose a password that is distinct from your RPi login.**
