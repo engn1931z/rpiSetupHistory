@@ -77,16 +77,16 @@ Record of Raspberry PI Setup Procedure for ENGN1931Z
 
 11. Setup basic (**unencrypted**) VNC - Virtual Network Connection [following subset of instructions here](https://www.raspberrypi.org/documentation/remote-access/vnc/)
 
-   + Install and launch tightvnc on RPi from terminal: 
+   + Install and launch realvnc on RPi from terminal: 
    
 ```
 sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer
 vncserver  :1 -geometry 1920x1080 -depth 24
 ```
-**When setting up tightvnc, choose a password that is distinct from your RPi login.**
+**When setting up realvnc, choose a password that is distinct from your RPi login.**
 
   + Install and launch Real VNC's Chrome App [link here](https://chrome.google.com/webstore/detail/vnc%C2%AE-viewer-for-google-ch/iabmpiboiopbgfabjmgeedhcmjenhbla) on your personal computer.
-  + Connect to your RPi by entering IP address (from Step 9) followed by `:` and the port number for tightvnc (usually `1`).
+  + Connect to your RPi by entering IP address (from Step 9) followed by `:` and the port number for realvnc (usually `1`).
     - For example, if IP address is `172.18.24.24` and the vnc is on port `1`, then you should use `172.18.24.24:1`
     - Login with your vnc password (see step 11 above).
     
@@ -96,15 +96,15 @@ vncserver  :1 -geometry 1920x1080 -depth 24
 cd .config
 mkdir autostart
 cd autostart
-nano tightvnc.desktop
+nano realvnc.desktop
 ```
 
-The last line creates the file `tightvnc.desktop`. Nano is a commandline utility for text editing. Fill it up like so:
+The last line creates the file `realvnc.desktop`. Nano is a commandline utility for text editing. Fill it up like so:
 
 ```
 [Desktop Entry]
 Type=Application
-Name=TightVNC
+Name=RealVNC
 Exec=vncserver :1 -geometry 1920x1080 -depth 24
 StartupNotify=False
 ```
